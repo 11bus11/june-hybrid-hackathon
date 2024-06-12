@@ -15,3 +15,15 @@
 5. To run the project locally with `DEBUG` enabled, make sure to include `os.environ['DEV'] = '1'` in your `env.py` file. Then run the project with the command `python manage.py runserver`
 
 6. Go to `localhost:3000` to check that the server is running.
+
+
+# Readme
+
+## Styling
+
+## Features
+
+## Deployment?
+
+## Credits
+
