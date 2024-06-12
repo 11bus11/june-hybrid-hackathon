@@ -2,8 +2,8 @@ from django.contrib import admin
 from .models import Appointment
 
 # Register your models here.
-class AppointmentAdmin(admin.ModelsAdmin):
+class AppointmentAdmin(admin.ModelAdmin):
     list_display = ("patient", " time_slot")
     
 
-admin.site.register(Appointment)
+admin.site.register(Appointment, AppointmentAdmin )
