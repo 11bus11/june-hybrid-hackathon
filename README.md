@@ -5,7 +5,7 @@
   - `git clone https://github.com/11bus11/june-hybrid-hackathon.git`
 
 2. Change the branch
-    - In the terminal, in the root folder, write `git checkout -b <Your brand name>`
+    - In the terminal, in the root folder, write `git checkout -b <Your branch name>`
 
 3. Create a virtual environment by writing `virtualenv venv` (You need to have installed virtualenv).
     - Activate the virtual environment by writing `source venv/bin/activate`
