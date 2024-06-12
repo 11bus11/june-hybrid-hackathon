@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 
 from pathlib import Path
 import os
+import dj_database_url
 
 if os.path.exists('env.py'):
     import env
@@ -41,6 +42,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    'users',
+    'scheduling',
+    'appointments',
 ]
 
 MIDDLEWARE = [
@@ -83,7 +88,12 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+# Leave this in: needed later for deployment to live DB //Johanna
+# DATABASES = {
+#     'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
+# }
 
+AUTH_USER_MODEL = 'users.User'
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
