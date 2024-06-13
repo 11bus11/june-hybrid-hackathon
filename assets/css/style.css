@@ -2,7 +2,6 @@
 
 /*--------------------------------------------Colors*/
 
-
 .ui-menu-color-title {
     background-color: #48ABFF;
 }
@@ -32,7 +31,7 @@ h1, h2, h3, h4 {
 
 /*--------------------------------------------Heading*/
 
-header {    
+header {
     font-family: "Quicksand", sans-serif;
 }
 
@@ -58,20 +57,34 @@ header {
     padding-top: 26px;
     font-size: 26px;
     letter-spacing: 1px;
+}
 
+/*--------------------------------------------Landing page*/
+
+.content-container {
+    min-height: 50vh;
+}
+
+.text-column,
+.image-column {
+    display: flex;
+    align-items: center;
+}
+
+.image-column img {
+    max-width: 100%;
+    height: auto;
 }
 
 /*--------------------------------------------Hover.css*/
 
 .hvr-sweep-to-bottom {
     height: 100%;
-
 }
 
 .hvr-sweep-to-bottom:before {
     background: rgba(0, 0, 0, 0.2);
 }
-
 
 /*--------------------------------------------Footer*/
 
@@ -89,4 +102,3 @@ footer {
 #footer-details {
     padding: 20px;
 }
-
