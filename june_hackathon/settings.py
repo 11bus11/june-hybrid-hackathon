@@ -62,6 +62,8 @@ SITE_ID = 1
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
 
+ACCOUNT_SIGNUP_FORM_CLASS = 'users.forms.CustomSignupForm'
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -86,8 +88,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                'allauth.account.context_processors.account',
-                'allauth.socialaccount.context_processors.socialaccount',
+                # 'allauth.account.context_processors.account',
+                # 'allauth.socialaccount.context_processors.socialaccount',
             ],
         },
     },

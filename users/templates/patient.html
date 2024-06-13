@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block content %}
+<p>Patientsida - för att visa patientens uppgifter och se bokningar</p>
+
+{% if user.is_authenticated %}
+<p>Hello {{ user.username }}!</p>
+{% else %}
+<p>Not logged in</p>
+{% endif %}
+{% endblock content %}

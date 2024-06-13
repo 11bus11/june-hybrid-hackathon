@@ -7,3 +7,11 @@ def index(request):
         'user': user,
     }
     return render(request, 'index.html', context)
+
+
+def patient(request):
+    user = request.user
+    context = {
+        'user': user,
+    }
+    return render(request, 'patient.html', context)
