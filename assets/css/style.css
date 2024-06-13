@@ -50,3 +50,16 @@ header {
     letter-spacing: 1px;
 
 }
+
+/*--------------------------------------------Hover.css*/
+
+.hvr-sweep-to-bottom {
+    height: 100%;
+
+}
+
+.hvr-sweep-to-bottom:before {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+
