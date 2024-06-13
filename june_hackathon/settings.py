@@ -62,7 +62,6 @@ SITE_ID = 1
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
 
-ACCOUNT_SIGNUP_FORM_CLASS = 'users.forms.CustomSignupForm'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -125,6 +124,7 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 ACCOUNT_EMAIL_VERIFICATION = 'none'
+ACCOUNT_SIGNUP_FORM_CLASS = 'users.forms.CustomSignupForm'
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/

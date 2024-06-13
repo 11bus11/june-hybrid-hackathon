@@ -1,25 +1,28 @@
-from allauth.account.forms import SignupForm
 from django import forms
 from users.models import User
 
 
-class CustomSignupForm(SignupForm):
-    first_name = forms.CharField(max_length=50, label='First Name')
-    last_name = forms.CharField(max_length=50, label='Last Name')
-    social_security_no = forms.CharField(max_length=20, label='Social Security Number')
-    phone_no = forms.CharField(max_length=15, label='Phone Number')
-    address = forms.CharField(max_length=255, label='Address')
-    post_code = forms.CharField(max_length=10, label='Post Code')
-    city = forms.CharField(max_length=50, label='City')
+class CustomSignupForm(forms.ModelForm):
+    password1 = forms.CharField(label='Password', widget=forms.PasswordInput)
+    password2 = forms.CharField(label='Password confirmation', widget=forms.PasswordInput)
 
     class Meta:
         model = User
-        fields = ('username', 'email', 'password1', 'password2', 'first_name',
-                  'last_name', 'social_security_no', 'phone_no', 'address',
-                  'post_code', 'city')
+        fields = ('username', 'email', 'first_name', 'last_name', 'social_security_no', 
+                  'phone_no', 'address', 'post_code', 'city')
+
+    def clean_password2(self):
+        password1 = self.cleaned_data.get("password1")
+        password2 = self.cleaned_data.get("password2")
+        if password1 and password2 and password1 != password2:
+            raise forms.ValidationError("Passwords don't match")
+        return password2
 
     def save(self, request):
-        user = super(CustomSignupForm, self).save(request)
+        user = super(CustomSignupForm, self).save(commit=False)
+        user.username = self.cleaned_data['username']
+        user.email = self.cleaned_data['email']
+        user.set_password(self.cleaned_data['password1'])
         user.first_name = self.cleaned_data['first_name']
         user.last_name = self.cleaned_data['last_name']
         user.social_security_no = self.cleaned_data['social_security_no']
@@ -29,3 +32,6 @@ class CustomSignupForm(SignupForm):
         user.city = self.cleaned_data['city']
         user.save()
         return user
+
+    def signup(self, request, user):
+        pass
