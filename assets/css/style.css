@@ -7,15 +7,15 @@
 }
 
 .ui-menu-color-about {
-    background-color: #FF7C4D;
+    background-color: #48ABFF;
 }
 
 .ui-menu-color-book {
-    background-color: #00C1A9;
+    background-color: #48ABFF;
 }
 
 .ui-menu-color-profile {
-    background-color: #0050B6;
+    background-color: #48ABFF;
 }
 
 /*--------------------------------------------Special paddings/margins/text*/
@@ -83,7 +83,7 @@ header {
 }
 
 .hvr-sweep-to-bottom:before {
-    background: rgba(0, 0, 0, 0.2);
+    background: #00C1A9;
 }
 
 /*--------------------------------------------Footer*/
@@ -101,4 +101,13 @@ footer {
 
 #footer-details {
     padding: 20px;
+}
+
+/* ----------------------------------------Book */
+
+button[type="submit"] {
+    margin-top: 15px;
+    margin-bottom: 20px;
+    color: #fafafa;
+    background-color: #00C1A9;
 }
