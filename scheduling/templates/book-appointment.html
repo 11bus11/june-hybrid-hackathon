@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load crispy_forms_tags %}
 
 {% block content %}
 <p>This is the page for booking appointments!</p>
@@ -8,4 +9,21 @@
 {% else %}
 <p>Not logged in</p>
 {% endif %}
+
+<form method="post">
+    {% csrf_token %}
+    {{ form | crispy }}
+    <button type="submit" class="btn btn-primary">Book Time Slot</button>
+</form>
+
+<!-- Listing timeslots -->
+
+<!-- <ul>
+    {% for timeslot in object_list %}
+    <li>{{ timeslot }}</li>
+    
+    {% empty %}
+    <li>No time slots available.</li>
+    {% endfor %}
+</ul> -->
 {% endblock content %}
