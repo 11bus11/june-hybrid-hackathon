@@ -8,8 +8,9 @@ class CustomSignupForm(forms.ModelForm):
 
     class Meta:
         model = User
-        fields = ('username', 'email', 'first_name', 'last_name', 'social_security_no', 
-                  'phone_no', 'address', 'post_code', 'city')
+        fields = ('username', 'email', 'first_name', 'last_name',
+                  'social_security_no', 'phone_no', 'address', 'post_code',
+                  'city')
 
     def clean_password2(self):
         password1 = self.cleaned_data.get("password1")
@@ -18,11 +19,20 @@ class CustomSignupForm(forms.ModelForm):
             raise forms.ValidationError("Passwords don't match")
         return password2
 
+    def clean_social_security_no(self):
+        social_security_no = self.cleaned_data['social_security_no']
+        print(f"Cleaned social_security_no: {social_security_no}")
+        if not social_security_no:
+            raise forms.ValidationError("Social Security Number cannot be blank.")
+        return social_security_no
+
     def save(self, request):
         user = super(CustomSignupForm, self).save(commit=False)
-        user.username = self.cleaned_data['username']
-        user.email = self.cleaned_data['email']
         user.set_password(self.cleaned_data['password1'])
+        user.save()
+        return user
+
+    def signup(self, request, user):
         user.first_name = self.cleaned_data['first_name']
         user.last_name = self.cleaned_data['last_name']
         user.social_security_no = self.cleaned_data['social_security_no']
@@ -32,6 +42,3 @@ class CustomSignupForm(forms.ModelForm):
         user.city = self.cleaned_data['city']
         user.save()
         return user
-
-    def signup(self, request, user):
-        pass
