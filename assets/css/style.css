@@ -19,10 +19,20 @@
     background-color: #0050B6;
 }
 
+/*--------------------------------------------Special paddings/margins/text*/
+
+h1, h2, h3, h4 {
+    margin: 0;
+}
+
+.general-sub {
+    font-family: "Quicksand", sans-serif;
+    color: #fff;
+}
+
 /*--------------------------------------------Heading*/
 
-header {
-    
+header {    
     font-family: "Quicksand", sans-serif;
 }
 
@@ -62,4 +72,21 @@ header {
     background: rgba(0, 0, 0, 0.2);
 }
 
+
+/*--------------------------------------------Footer*/
+
+footer {
+    background-color: #525252;
+    color: #fff;
+    min-height: 120px;
+    margin: 0;
+}
+
+.inline-block {
+    display: inline-block;
+}
+
+#footer-details {
+    padding: 20px;
+}
 
