@@ -3,7 +3,7 @@ from .models import Appointment
 
 # Register your models here.
 class AppointmentAdmin(admin.ModelAdmin):
-    list_display = ("patient", " time_slot")
+    list_display = ("patient", "time_slot")
     
 
 admin.site.register(Appointment, AppointmentAdmin )
