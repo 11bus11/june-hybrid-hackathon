@@ -36,24 +36,28 @@
             </div>
         </div>
     </header>
-    <section class="container-fluid">
-        <div class="container-fluid content-container">
-            <div class="row h-100">
-                <!-- Text Column -->
-                <div class="col-md-6 text-column">
-                    <div>
-                        <h2>Profile</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vitae est at odio consectetur commodo. Suspendisse potenti.</p>
-                        <p>Vestibulum non nisi consequat, ullamcorper turpis non, tincidunt urna. Curabitur ac scelerisque lorem.</p>
-                    </div>
+    <main>
+        <div class="container">
+            <h2 class="text-center">Log in</h2>
+            
+            <!-- Login Form -->
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="username">Username or Email</label>
+                    <input type="text" class="form-control" id="username" name="username" required>
                 </div>
-                <!-- Image Column -->
-                <div class="col-md-6 image-column">
-                    <img src="assets/images/hero-image.jpg" alt="Sample Image" class="img-fluid">
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" class="form-control" id="password" name="password" required>
                 </div>
-            </div>
+                <button type="submit" class="btn btn-primary">Login</button>
+            </form>
+            
+            <!-- Optional: Link to registration or forgot password -->
+            <p>Don't have an account? <a href="register.html">Register</a></p>
+            <p>Forgot your password? <a href="forgot-password.html">Reset Password</a></p>
         </div>
-    </section>
+    </main>
     <footer class="container-fluid">
         <div id="footer-details" class="row">
             <div class="col-sm-6 col social-buttons">
