@@ -1,5 +1,52 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
 
+/*--------------------------------------------Colors*/
+
+
+.ui-menu-color-title {
+    background-color: #48ABFF;
+}
+
+.ui-menu-color-about {
+    background-color: #FF7C4D;
+}
+
+.ui-menu-color-book {
+    background-color: #00C1A9;
+}
+
+.ui-menu-color-profile {
+    background-color: #0050B6;
+}
+
+/*--------------------------------------------Heading*/
+
 header {
-    margin: 30px;
+    
+    font-family: "Quicksand", sans-serif;
+}
+
+.title {
+    text-decoration: none;
+}
+
+.menuitem {
+    height: 120px;
+    text-align: center;
+}
+
+.menuitem a {
+    width: 100%;
+    text-decoration: none;
+    color: #fff;
+}
+
+.menuitem span {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding-top: 26px;
+    font-size: 26px;
+    letter-spacing: 1px;
+
 }
