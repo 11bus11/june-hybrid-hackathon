@@ -1,58 +1,55 @@
 {% extends "base.html" %}
-{% load i18n %}
+
 {% load allauth account %}
-{% block head_title %}
-{% trans "Sign In" %}
-{% endblock head_title %}
+
+<!-- Page title -->
+{% block title %}
+Sjukstugan- Sign In
+{% endblock title %}
+
+<!-- Page main content -->
 {% block content %}
-{% element h1 %}
-{% trans "Sign In" %}
-{% endelement %}
-{% if messages %}
-<ul class="messages">
-    {% for message in messages %}
-    <li{% if message.tags %} class="{{ message.tags }}" {% endif %}>
-        {{ message }}
-        </li>
-        {% endfor %}
-</ul>
-{% endif %}
-{% if not SOCIALACCOUNT_ONLY %}
-{% setvar link %}
-<a href="{{ signup_url }}">
-    {% endsetvar %}
-    {% setvar end_link %}
-</a>
-{% endsetvar %}
-{% element p %}
-{% blocktranslate %}If you have not created an account yet, then please {{ link }}sign up{{ end_link }} first.
-{% endblocktranslate %}
-{% endelement %}
-{% url 'account_login' as login_url %}
-{% element form form=form method="post" action=login_url tags="entrance,login" %}
-{% slot body %}
-{% csrf_token %}
-{% element fields form=form unlabeled=True %}
-{% endelement %}
-{{ redirect_field }}
-{% endslot %}
-{% slot actions %}
-{% element button type="submit" tags="prominent,login" %}
-{% trans "Sign In" %}
-{% endelement %}
-{% endslot %}
-{% endelement %}
-{% endif %}
-{% if LOGIN_BY_CODE_ENABLED %}
-{% element hr %}
-{% endelement %}
-{% element h2 %}
-{% element button href=request_login_code_url tags="prominent,login,secondary" %}
-{% trans "Mail me a sign-in code" %}
-{% endelement %}
-{% endelement %}
-{% endif %}
-{% if SOCIALACCOUNT_ENABLED %}
-{% include "socialaccount/snippets/login.html" with page_layout="entrance" %}
-{% endif %}
+<div class="container-xl d-flex justify-content-center align-items-center">
+    <!-- Sign in section -->
+    <section class="my-3 my-md-4 m-lg-4 p-4">
+        {% if messages %}
+        {{ message.INFO }}
+        <ul class="messages">
+            {% for message in messages %}
+            <li {% if message.tags %} class="{{ message.tags }}" {% endif %}>
+                {{ message }}
+            </li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        <div class="row">
+            <div class="col-md-6">
+                <h1 class="mb-3">Sign in</h1>
+                <!-- Sign in form -->
+                <form class="my-4" method="POST" action="{% url 'account_login' %}">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    {% if redirect_field_value %}
+                    <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+                    {% endif %}
+                    <button class="primaryAction p-2 px-3 fw-bold fs-5" type="submit">
+                        Sign In
+                    </button>
+                </form>
+            </div>
+            <div class="col-md-6 d-flex">
+                <div class="bg-brand-gray p-4 text-center d-flex flex-column justify-content-center">
+                    <p class="fs-5">If you have not registered as a patient yet, please start with signing up.
+                    </p>
+                    <div>
+                        <a class="btn d-inline-block p-2 px-3 fw-bold fs-5" href="{% url 'account_signup' %}"
+                            aria-label="Go to the sign up page to register">
+                            Sign Up
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
 {% endblock content %}

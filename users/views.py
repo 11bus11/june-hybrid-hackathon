@@ -31,11 +31,3 @@ class PatientDetailView(LoginRequiredMixin, DetailView):
         patient = self.get_object()  # Get the user object
         context['appointments'] = Appointment.objects.filter(patient=patient)
         return context
-
-    def handle_no_permission(self):
-        messages.add_message(
-            self.request,
-            messages.INFO,
-            'Sorry, you need to log in to visit this page.'
-        )
-        return redirect(self.get_login_url())
