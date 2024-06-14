@@ -100,12 +100,6 @@ body {
     margin: 0;
 }
 
-main {
-    display: flex;
-    flex: 1;
-    flex-direction: column;
-}
-
 bg {
     display: flex;
     flex-direction: column;
@@ -215,11 +209,41 @@ footer {
 
 /* ----------------------------------------Book */
 
-button[type="submit"] {
+button[type="submit"],
+.btn-link-green {
     margin-top: 15px;
     margin-bottom: 20px;
     color: #fafafa;
     background-color: #3e913b;
+    border: none;
+}
+
+button[type="submit"]:hover,
+.btn-link-green:hover {
+    background-color: #246718;
+    font-weight: 600;
+    text-decoration: none;
+    color: #fafafa;
+}
+
+/* ------------------------------------- Forms */
+form label {
+    min-width: 150px;
+    margin-top: 10px;
+}
+
+.dividing-line {
+    height: 5px;
+    background-color: #3e913b;
+    width: 100%;
+}
+
+.errorlist li {
+    color: #e91d0a;
+}
+
+.helptext {
+    display: none;
 }
 
 /* Media Queries */
