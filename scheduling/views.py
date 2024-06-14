@@ -1,13 +1,4 @@
 
-# def schedule(request):
-#     user = request.user
-#     context = {
-#         'user': user,
-#     }
-#     return render(request, 'book-appointment.html', context)
-
-# from django.db import models
-from django.shortcuts import redirect
 from django.urls import reverse_lazy
 from django.views.generic import ListView
 # from django.db.models import Q
@@ -62,6 +53,6 @@ class ScheduleListView(LoginRequiredMixin, ListView):
                 time_slot=timeslot,
                 appointment_reason=form.cleaned_data['reason']
             )
-            appointment.save()
+            appointment.save(args)
             # return redirect('success_page')
         return self.get(request, *args, **kwargs)
