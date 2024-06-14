@@ -5,7 +5,7 @@ from django.db import models
 class Day(models.Model):
     date = models.DateField(unique=True)
 
-    def str(self):
+    def __str__(self):
         return self.date.strftime('%a, %B %d, %Y')
 
 
@@ -22,6 +22,6 @@ class TimeSlot(models.Model):
             self.end_time > other.start_time
         )
 
-    def str(self):
+    def __str__(self):
         return f"{self.start_time.strftime('%H:%M')} - {
             self.end_time.strftime('%H:%M')} on {self.day}"
