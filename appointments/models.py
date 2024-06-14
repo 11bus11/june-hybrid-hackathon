@@ -30,5 +30,5 @@ class Appointment(models.Model):
         self.clean()  # Perform validation
         super().save(*args, **kwargs)
 
-    def str(self):
+    def __str__(self):
         return f"Booking for {self.patient} on {self.time_slot}"
