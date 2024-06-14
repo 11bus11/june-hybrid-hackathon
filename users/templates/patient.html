@@ -5,39 +5,44 @@
 <!-- profile.html content starts here -->
 <main class="main-bg">
     <div class="container main-text">
-        <h2 class="text-center">Log in</h2>
+        <h1>
+            {% if user.is_authenticated %}
+            <p>Hello {{ user.first_name }}!</p>
+            {% else %}
+            Not logged in
+            {% endif %}
+        </h1>
+
+        <h2>Appointments:</h2>
+        {% if appointments %}
+        <p>You have {{ appointments.count }} upcoming appointments: </p>
+        <ul>
+            {% for appointment in appointments %}
+            <li>{{ appointment }}</li>
+            {% endfor %}
+        </ul>
+        <p>If you need to make another appointment, please visit the <a href="{% url 'schedule' %}">booking page.</a>
+        </p>
+        {% else %}
+        <p>You have no upcoming appointments. If you need to make an appointment, visit the <a
+                href="{% url 'schedule' %}">booking page.</a></p>
+        {% endif %}
+
+        <h2>Your details:</h2>
+        <p><span class="label">Name: </span>{{ user.first_name }}</p>
+        <p><span class="label">Social security no: </span>{{ user.social_security_no }}</p>
+        <p><span class="label">Address: </span>{{ user.address }}</p>
+        <p><span class="label">Post code / city: </span>{{ user.post_code }} {{ user.city }}</p>
+        <p><span class="label">Email: </span>{{ user.email }}</p>
+        <p><span class="label">Phone: </span>{{ user.phone_no }}</p>
 
         {% if user.is_authenticated %}
-        <p>Hello {{ user.username }}!</p>
-        <ul> 
-            {% for appointment in appointments %} 
-                <li>{{ appointment }}</li> 
-            {% endfor %} 
-            </ul> 
+
         {% else %}
         <p>Not logged in</p>
         {% endif %}
-        
 
-
-        <!-- Login Form -->
-        <form id="loginForm">
-            <div class="form-group">
-                <label for="username">Username or Email</label>
-                <input type="text" class="form-control" id="username" name="username" required>
-            </div>
-            <div class="form-group">
-                <label for="password">Password</label>
-                <input type="password" class="form-control" id="password" name="password" required>
-            </div>
-            <button type="submit" class="btn btn-primary">Login</button>
-        </form>
-        
-        <!-- Optional: Link to registration or forgot password -->
-        <p>Don't have an account? <a href="register.html">Register</a></p>
-        <p>Forgot your password? <a href="forgot-password.html">Reset Password</a></p>
-    </div>
 </main>
 <!-- profile.html content ends here -->
- 
+
 {% endblock %}

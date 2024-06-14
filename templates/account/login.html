@@ -22,17 +22,17 @@ Sjukstugan- Sign In
                     {% if redirect_field_value %}
                     <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
                     {% endif %}
-                    <button class="primaryAction p-2 px-3 fw-bold fs-5" type="submit">
+                    <button class="p-2 px-3 fw-bold fs-5" type="submit">
                         Sign In
                     </button>
                 </form>
             </div>
             <div class="col-md-6 d-flex">
-                <div class="bg-brand-gray p-4 text-center d-flex flex-column justify-content-center">
+                <div class="bg-white p-4 text-center d-flex flex-column justify-content-center">
                     <p class="fs-5">If you have not registered as a patient yet, please start with signing up.
                     </p>
                     <div>
-                        <a class="btn d-inline-block p-2 px-3 fw-bold fs-5" href="{% url 'account_signup' %}"
+                        <a class="btn-link-green d-inline-block p-2 px-3 fw-bold fs-5" href="{% url 'account_signup' %}"
                             aria-label="Go to the sign up page to register">
                             Sign Up
                         </a>
