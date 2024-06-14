@@ -1,7 +1,11 @@
 {% load static %}
 
-{% url 'home_page' as home_page_url %}
+{% url 'index' as home_page_url %}
 {% url 'schedule' as schedule_url %}
+{% url 'patient' as patient_url %}
+{% url 'account_login' as login_url %}
+{% url 'account_signup' as signup_url %}
+{% url 'account_logout' as logout_url %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -29,17 +33,27 @@
                 <div class="col">
                     <ul id="nav" class="list-group list-group-horizontal-md">
                         <li class="col-12 col-md-6 ui-menu-color-title list-group-item menuitem">
-                            <a href="index.html"><span>Sjukstugan</span></a>
-                        </li>
-                        <li class="col-12 col-md-2 ui-menu-color-about list-group-item menuitem">
-                            <a href="about.html" class="hvr-sweep-to-bottom"><span>About</span></a>
+                            <a href="{% url 'index' %}"><span>Sjukstugan</span></a>
                         </li>
                         <li class="col-12 col-md-2 ui-menu-color-book list-group-item menuitem">
                             <a href="{% url 'schedule' %}" class="hvr-sweep-to-bottom"><span>Book</span></a>
                         </li>
                         <li class="col-12 col-md-2 ui-menu-color-profile list-group-item menuitem">
-                            <a href="profile.html" class="hvr-sweep-to-bottom"><span>Profile</span></a>
+                            <a href="{% url 'patient' %}" class="hvr-sweep-to-bottom"><span>Profile</span></a>
                         </li>
+                        {% if user.is_authenticated %}
+                        <li class="col-12 col-md-2 ui-menu-color-profile list-group-item menuitem">
+                            <a href="{% url 'account_logout' %}" class="hvr-sweep-to-bottom"><span>Log out</span></a>
+                        </li>
+                        {% else %}
+                        <li class="col-12 col-md-2 ui-menu-color-profile list-group-item menuitem">
+                            <a href="{% url 'account_login' %}" class="hvr-sweep-to-bottom"><span>Log in</span></a>
+                        </li>
+                        <li class="col-12 col-md-2 ui-menu-color-profile list-group-item menuitem">
+                            <a href="{% url 'account_signup' %}" class="hvr-sweep-to-bottom"><span>Sign up</span></a>
+                        </li>
+                        {% endif %}
+                        
                     </ul>
                 </div>
             </div>
