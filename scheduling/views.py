@@ -55,5 +55,5 @@ class ScheduleListView(LoginRequiredMixin, ListView):
                 appointment_reason=form.cleaned_data['reason']
             )
             appointment.save(args)
-            # return redirect('success_page')
+            return redirect('patient')
         return self.get(request, *args, **kwargs)

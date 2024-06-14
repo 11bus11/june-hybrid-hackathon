@@ -26,7 +26,7 @@
 .main-text {
     color: #155909;
     font-family: "Quicksand", sans-serif;
-    
+
 }
 
 h2 {
@@ -35,7 +35,10 @@ h2 {
 
 /*--------------------------------------------Special paddings/margins/text*/
 
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
     margin: 80;
 }
 
@@ -49,9 +52,9 @@ h1, h2, h3, h4 {
 header {
     font-family: "Capriola", sans-serif;
     background-color: #fff5be;
-    
 
-    
+
+
 }
 
 .title {
@@ -93,8 +96,14 @@ header {
 body {
     display: flex;
     flex-direction: column;
-    min-height: 100vh; 
+    min-height: 100vh;
     margin: 0;
+}
+
+main {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
 }
 
 bg {
@@ -145,7 +154,7 @@ footer {
     min-height: 120px;
     padding: 20px 0;
     font-family: "Quicksand", sans-serif;
-    flex-shrink: 0; 
+    flex-shrink: 0;
 }
 
 .inline-block {
@@ -155,7 +164,7 @@ footer {
 #footer-details {
     padding: 20px;
     display: flex;
-    flex-wrap: wrap; 
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
 }
@@ -167,7 +176,7 @@ footer {
 
 .social-links {
     display: flex;
-    flex-wrap: wrap; 
+    flex-wrap: wrap;
     padding-bottom: 15px;
     list-style: none;
     margin: 0;
@@ -176,12 +185,12 @@ footer {
 
 .social-links li {
     background-color: #ccbc89;
-    margin-right: 10px; 
+    margin-right: 10px;
 }
 
 .social-links li:last-child {
     margin-right: 0;
-    margin-bottom: 0; 
+    margin-bottom: 0;
 }
 
 .social-links li a i {
@@ -219,6 +228,7 @@ button[type="submit"] {
     .list-group-horizontal-md {
         display: flex;
     }
+
     #nav li {
         width: 100%;
         text-align: center;
@@ -226,7 +236,7 @@ button[type="submit"] {
 }
 
 @media (max-width: 768px) {
-    
+
     #nav li {
         display: flex;
         align-items: center;
