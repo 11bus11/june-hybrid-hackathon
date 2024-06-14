@@ -1,5 +1,7 @@
 
 from django.urls import reverse_lazy
+from django.contrib import messages
+from django.shortcuts import redirect
 from django.views.generic import ListView
 # from django.db.models import Q
 from .models import TimeSlot
@@ -20,7 +22,7 @@ class ScheduleListView(LoginRequiredMixin, ListView):
     """
     model = TimeSlot
     template_name = 'book-appointment.html'
-    login_url = reverse_lazy('index')
+    login_url = '/accounts/login/'
 
     def get_queryset(self):
         # Only return available time slots
@@ -40,6 +42,14 @@ class ScheduleListView(LoginRequiredMixin, ListView):
         context['form'] = TimeSlotForm()
 
         return context
+
+    def handle_no_permission(self):
+        messages.add_message(
+            self.request,
+            messages.INFO,
+            'Sorry, you need to log in before you can schedule an appointment.'
+        )
+        return redirect(self.get_login_url())
 
     def post(self, request, *args, **kwargs):
         form = TimeSlotForm(request.POST)
