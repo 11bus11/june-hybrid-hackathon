@@ -75,13 +75,144 @@ If PR leads to conflicts:
 7. Go to GitHub. You should now see a green tick on the PR.
 
 
-# Readme
+# june-hybrid-hackathon(team_1):
 
-## Styling
+## Sjukstugan
 
-## Features
+![sjukstugan_introduction_picture]()
 
-## Deployment?
+## Features:
 
-## Credits
+### The header:
+
+The header is included on all pages with four navbar links to seperate pages which are the following:
+
+* Sjukstugan(link to homepage)
+
+* About
+
+* Book
+
+* Profile
+
+![header]()
+
+### The landing page image: 
+
+Below the header the user can see a green welcome text with a simple and clean dark grey description text underneath it to give the user an easy and fast experience. To the right side of the welcome text and description text the user can see a green circular shaped image which is intended to look like a cartoon inspired bacteria molecule.
+
+![landing_page_image]()
+
+### Footer:
+
+The footer is included on all four pages and contains all our social media platform links which are the following:
+
+*Instagram
+
+*Facebook
+
+*Twitter
+
+*Youtube
+
+The footer also includes an email address to our support.
+
+![footer]()
+
+### The About page:
+
+The about page gives the user a view of a green about us text with a smaller dark grey description text underneath it. The description text tells the user about our story and when our company was founded. On the right side of the about us text and description text the user can see a red circular shaped image which is intended to look like a cartoon inspired blood molecule.
+
+![about_page]()
+
+### The book an appointment form:
+
+This section can be found on the booking page gives the user an alternative to book an appointment with us. Our team has designed the form to be easily understandable and readable for all people no matter what the age is.
+
+The book an appointment form includes the following input fields:
+
+*
+
+*
+
+*
+
+![booking_form]()
+
+### The log in form:
+
+This section can be found on the profile page gives the user an option to log in to their account.
+
+The log in form includes the following input fields:
+
+*
+
+*
+
+*
+
+![log_in_page]()
+
+### Overall info:
+
+The website has colors and a design that our team feels matches or inspires the user experience of a swedish based healthcare business culture. The yellow colour is inspired from the swedish flag and the overall colours are inspired from healthcare related experiences:
+
+The total colours are:
+
+* Green
+
+* Red
+
+* Light yellow
+
+* Dark yellow
+
+* White
+
+* Light grey
+
+* Dark grey(Used on the small texts)
+
+* Blue(Can be found on the profile page for a couple of links)
+
+### Validator testing:
+
+*The HTML and CSS code has been validated through:
+
+*W3C Validator(HTML): https://validator.w3.org/nu/
+
+*Jigsaw Validator(CSS): https://www.w3.org/
+
+### Overall tests:
+
+* Lighthouse results:
+
+![lighthouse]()
+
+* Amiresponsive results:
+
+Here is a link to the results:
+
+![amiresponsive]()
+
+### Unfixed bugs:
+
+*There was no bugs discovered on this project.
+
+### Deployment:
+
+The deployment was made through github. The step by step process where the following: Settings --> Pages --> Source --> Deploy from a branch --> Main --> /(root) --> Save.
+
+![github_screenshot]()
+
+### Credit:
+
+* The majority of the total code was taken from or inspired by
+
+### Media:
+
+* All the icons used in the code was taken from font awsome. Here is a url adress to their homepage: https://fontawesome.com/
+
+
+
 
