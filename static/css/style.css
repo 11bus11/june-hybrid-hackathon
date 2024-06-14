@@ -48,6 +48,9 @@ h1, h2, h3, h4 {
 
 header {
     font-family: "Capriola", sans-serif;
+    background-color: #fff5be;
+    
+
     
 }
 
@@ -135,14 +138,14 @@ bg {
 
 /*--------------------------------------------Footer*/
 
+
 footer {
     background-color: #ccbc89;
     color: #fff;
-    min-height: 120px; /* Set a minimum height for the footer */
-    margin-top: auto; /* Push footer to the bottom of the viewport */
+    min-height: 120px;
     padding: 20px 0;
     font-family: "Quicksand", sans-serif;
-    flex-shrink: 0; /* Prevent the footer from shrinking */
+    flex-shrink: 0; 
 }
 
 .inline-block {
@@ -151,6 +154,54 @@ footer {
 
 #footer-details {
     padding: 20px;
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: space-between;
+    align-items: center;
+}
+
+.social-buttons {
+    flex: 1;
+    min-width: 200px;
+}
+
+.social-links {
+    display: flex;
+    flex-wrap: wrap; 
+    padding-bottom: 15px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.social-links li {
+    background-color: #ccbc89;
+    margin-right: 10px; 
+}
+
+.social-links li:last-child {
+    margin-right: 0;
+    margin-bottom: 0; 
+}
+
+.social-links li a i {
+    width: 32px;
+    height: 32px;
+    padding: 12px 0;
+    border-radius: 50%;
+    font-size: 13px;
+    line-height: 7px;
+    text-align: center;
+    color: #fafafa;
+    background: #8f8f8f;
+    transition: all 0.35s ease-in-out;
+    -moz-transition: all 0.35s ease-in-out;
+    -webkit-transition: all 0.35s ease-in-out;
+    -o-transition: all 0.35s ease-in-out;
+}
+
+.social-links li a i:hover {
+    background: #3e913b;
 }
 
 /* ----------------------------------------Book */
@@ -160,4 +211,39 @@ button[type="submit"] {
     margin-bottom: 20px;
     color: #fafafa;
     background-color: #3e913b;
+}
+
+/* Media Queries */
+
+@media (max-width: 767.98px) {
+    .list-group-horizontal-md {
+        display: flex;
+    }
+    #nav li {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+    
+    #nav li {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+
+    #footer-details {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .social-links {
+        justify-content: flex-start;
+    }
+
+    .social-links li {
+        margin-bottom: 10px;
+    }
 }

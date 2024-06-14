@@ -1,8 +1,4 @@
 {% extends "base.html" %}
-{% load crispy_forms_tags %}
-
-<!-- user = the user object, corresponding to the logged in patient
-object_list = the available timeslots (not booked) -->
 
 {% block content %}
 
@@ -10,11 +6,6 @@ object_list = the available timeslots (not booked) -->
 <section class="main-bg main-text">
     <div class="container mt-5">
         <h2 class="text-center">Book an Appointment</h2>
-        <form method="post">
-            {% csrf_token %}
-            {{ form | crispy }}
-            <button type="submit" class="btn btn-primary">Book Time Slot</button>
-        </form>
         <form>
             <div class="form-group">
                 <label for="name">Name</label>
