@@ -2,6 +2,10 @@ from django.shortcuts import render
 
 
 def index(request):
+
+    print("request-------------", request)
+    return render(request, 'users/index.html')
+
     user = request.user
     context = {
         'user': user,
@@ -15,3 +19,4 @@ def patient(request):
         'user': user,
     }
     return render(request, 'patient.html', context)
+
