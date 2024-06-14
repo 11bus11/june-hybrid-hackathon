@@ -1,25 +1,27 @@
-{% extends "account/base_manage.html" %}
-{% load allauth i18n %}
-{% block head_title %}
-    {% trans "Sign Out" %}
-{% endblock head_title %}
+{% extends "base.html" %}
+
+<!-- Page title -->
+{% block title %}
+Sjukstugan - Log out
+{% endblock title %}
+
 {% block content %}
-    {% element h1 %}
-        {% trans "Sign Out" %}
-    {% endelement %}
-    {% element p %}
-        {% trans 'Are you sure you want to sign out?' %}
-    {% endelement %}
-    {% url 'account_logout' as action_url %}
-    {% element form method="post" action=action_url no_visible_fields=True %}
-        {% slot body %}
+<div class="container-xl h-100 d-flex justify-content-center align-items-center">
+    <!-- Sign out section -->
+    <section class="my-3 my-md-4 m-lg-4 p-4 mx-auto w-100">
+        <h1>Sign out</h1>
+        <div class="bg-brand-green h-line mb-3"> </div>
+        <p>Are you sure you want to sign out?</p>
+        <!-- Sign out form -->
+        <form method="post" action="{% url 'account_logout' %}">
             {% csrf_token %}
-            {{ redirect_field }}
-        {% endslot %}
-        {% slot actions %}
-            {% element button type="submit" %}
-                {% trans 'Sign Out' %}
-            {% endelement %}
-        {% endslot %}
-    {% endelement %}
+            {% if redirect_field_value %}
+            <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+            {% endif %}
+            <button type="submit" class="p-2 px-3 fw-bold fs-5">
+                Sign Out
+            </button>
+        </form>
+    </section>
+</div>
 {% endblock content %}
