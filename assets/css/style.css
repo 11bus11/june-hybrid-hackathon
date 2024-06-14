@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Capriola&family=Quicksand:wght@300..700&display=swap');
 
 /*--------------------------------------------Colors*/
 
@@ -47,11 +47,16 @@ h1, h2, h3, h4 {
 /*--------------------------------------------Heading*/
 
 header {
-    font-family: "Quicksand", sans-serif;
+    font-family: "Capriola", sans-serif;
+    
 }
 
 .title {
     text-decoration: none;
+}
+
+.list-group-item {
+    border: none;
 }
 
 .menuitem {
@@ -69,9 +74,14 @@ header {
     display: block;
     width: 100%;
     text-align: center;
-    padding-top: 26px;
+    padding-top: 28px;
     font-size: 26px;
     letter-spacing: 1px;
+}
+
+#nav .ui-menu-color-title a span {
+    font-size: 48px;
+    padding-top: 8px;
 }
 
 
