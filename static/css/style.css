@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Capriola&family=Quicksand:wght@300..700&display=swap');
+
+/*--------------------------------------------Colors*/
+
+.ui-menu-color-title {
+    background-color: #fff5be;
+}
+
+.ui-menu-color-about {
+    background-color: #fff5be;
+}
+
+.ui-menu-color-book {
+    background-color: #fff5be;
+}
+
+.ui-menu-color-profile {
+    background-color: #fff5be;
+}
+
+.main-bg {
+    background-color: #f1f4ff;
+    padding: 20px;
+}
+
+.main-text {
+    color: #155909;
+    font-family: "Quicksand", sans-serif;
+    
+}
+
+h2 {
+    font-family: "Quicksand", sans-serif;
+}
+
+/*--------------------------------------------Special paddings/margins/text*/
+
+h1, h2, h3, h4 {
+    margin: 80;
+}
+
+.general-sub {
+    font-family: "Quicksand", sans-serif;
+    color: #fff;
+}
+
+/*--------------------------------------------Heading*/
+
+header {
+    font-family: "Capriola", sans-serif;
+    
+}
+
+.title {
+    text-decoration: none;
+}
+
+.list-group-item {
+    border: none;
+}
+
+.menuitem {
+    height: 120px;
+    text-align: center;
+}
+
+.menuitem a {
+    width: 100%;
+    text-decoration: none;
+    color: #e91d0a;
+}
+
+.menuitem span {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding-top: 28px;
+    font-size: 26px;
+    letter-spacing: 1px;
+}
+
+#nav .ui-menu-color-title a span {
+    font-size: 48px;
+    padding-top: 8px;
+}
+
+
+/*--------------------------------------------Body*/
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; 
+    margin: 0;
+}
+
+bg {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.main-bg {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+}
+
+.content-container {
+    min-height: 50vh;
+    flex: 1;
+}
+
+.text-column,
+.image-column {
+    display: flex;
+    align-items: center;
+}
+
+.image-column img {
+    max-width: 100%;
+    height: auto;
+}
+
+/*--------------------------------------------Hover.css*/
+
+.hvr-sweep-to-bottom {
+    height: 100%;
+}
+
+.hvr-sweep-to-bottom:before {
+    background: #3e913b;
+}
+
+/*--------------------------------------------Footer*/
+
+footer {
+    background-color: #ccbc89;
+    color: #fff;
+    min-height: 120px; /* Set a minimum height for the footer */
+    margin-top: auto; /* Push footer to the bottom of the viewport */
+    padding: 20px 0;
+    font-family: "Quicksand", sans-serif;
+    flex-shrink: 0; /* Prevent the footer from shrinking */
+}
+
+.inline-block {
+    display: inline-block;
+}
+
+#footer-details {
+    padding: 20px;
+}
+
+/* ----------------------------------------Book */
+
+button[type="submit"] {
+    margin-top: 15px;
+    margin-bottom: 20px;
+    color: #fafafa;
+    background-color: #3e913b;
+}
