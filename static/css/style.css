@@ -55,6 +55,10 @@ h4 {
     color: #fff;
 }
 
+.qs-font {
+    font-family: "Quicksand", sans-serif;
+}
+
 /*--------------------------------------------Heading*/
 
 header {
@@ -116,7 +120,7 @@ main {
     display: flex;
     flex-direction: column;
     flex: 1;
-    margin-top: 66px;
+    margin-top: 60px;
 }
 
 .main-bg {
@@ -226,14 +230,15 @@ button[type="submit"],
     margin-top: 15px;
     margin-bottom: 20px;
     color: #fafafa;
-    background-color: #3e913b;
+    background-color: #245a1b;
     border: none;
     border-radius: 2em;
+    text-decoration: none;
 }
 
 button[type="submit"]:hover,
 .btn-link-green:hover {
-    background-color: #246718;
+    background-color: #417d35;
     font-weight: 600;
     text-decoration: none;
     color: #fafafa;
@@ -267,6 +272,11 @@ form input {
 .standard-link {
     color: #155909;
     font-weight: 500;
+    text-decoration: none;
+}
+
+.standard-link:hover {
+    text-decoration: underline;
 }
 
 /* Media Queries */
