@@ -26,11 +26,19 @@
 .main-text {
     color: #155909;
     font-family: "Quicksand", sans-serif;
-
 }
 
 h2 {
     font-family: "Quicksand", sans-serif;
+}
+
+.brand-green {
+    color: #155909;
+}
+
+/* ------------------------------------------ Font styles */
+.fw-600 {
+    font-weight: 600;
 }
 
 /*--------------------------------------------Special paddings/margins/text*/
@@ -39,7 +47,7 @@ h1,
 h2,
 h3,
 h4 {
-    margin: 80;
+    margin: 1.5rem 0;
 }
 
 .general-sub {
@@ -52,9 +60,6 @@ h4 {
 header {
     font-family: "Capriola", sans-serif;
     background-color: #fff5be;
-
-
-
 }
 
 .title {
@@ -229,6 +234,10 @@ button[type="submit"]:hover,
 /* ------------------------------------- Forms */
 form label {
     min-width: 150px;
+    /* margin-top: 10px; */
+}
+
+form input {
     margin-top: 10px;
 }
 
