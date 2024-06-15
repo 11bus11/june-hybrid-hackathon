@@ -15,7 +15,7 @@ Sjukstugan- Sign In
         <section class="my-3 my-md-4 m-lg-4 p-4">
             <div class="row">
                 <div class="col-md-6">
-                    <h1 class="mb-3">Sign in</h1>
+                    <h1 class="mb-3 qs-font brand-green">Sign in</h1>
                     <div class="dividing-line"></div>
                     <!-- Sign in form -->
                     <form class="my-4" method="POST" action="{% url 'account_login' %}">
@@ -24,7 +24,7 @@ Sjukstugan- Sign In
                         {% if redirect_field_value %}
                         <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
                         {% endif %}
-                        <button class="p-2 px-3 fw-bold fs-5" type="submit">
+                        <button class="p-2 px-3 fw-bold fs-5 qs-font" type="submit">
                             Sign In
                         </button>
                     </form>
@@ -34,7 +34,7 @@ Sjukstugan- Sign In
                         <p class="fs-5">If you have not registered as a patient yet, please start with signing up.
                         </p>
                         <div>
-                            <a class="btn-link-green d-inline-block p-2 px-3 fw-bold fs-5"
+                            <a class="btn-link-green qs-font d-inline-block p-2 px-3 fw-bold fs-5"
                                 href="{% url 'account_signup' %}" aria-label="Go to the sign up page to register">
                                 Sign Up
                             </a>
