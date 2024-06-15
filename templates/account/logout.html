@@ -6,22 +6,24 @@ Sjukstugan - Log out
 {% endblock title %}
 
 {% block content %}
-<div class="container-xl h-100 d-flex justify-content-center align-items-center">
-    <!-- Sign out section -->
-    <section class="my-3 my-md-4 m-lg-4 p-4 mx-auto w-100">
-        <h1>Sign out</h1>
-        <div class="bg-brand-green h-line mb-3"> </div>
-        <p>Are you sure you want to sign out?</p>
-        <!-- Sign out form -->
-        <form method="post" action="{% url 'account_logout' %}">
-            {% csrf_token %}
-            {% if redirect_field_value %}
-            <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
-            {% endif %}
-            <button type="submit" class="p-2 px-3 fw-bold fs-5">
-                Sign Out
-            </button>
-        </form>
-    </section>
-</div>
+<section class="container-fluid main-bg">
+    <div class="container-xl d-flex justify-content-center align-items-center p-4">
+        <!-- Sign out section -->
+        <div class="my-3 my-md-4 m-lg-4 p-4 mx-auto w-100">
+            <h1>Sign out</h1>
+            <div class="dividing-line mb-3"> </div>
+            <p>Are you sure you want to sign out?</p>
+            <!-- Sign out form -->
+            <form method="post" action="{% url 'account_logout' %}">
+                {% csrf_token %}
+                {% if redirect_field_value %}
+                <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+                {% endif %}
+                <button type="submit" class="p-2 px-3 fw-bold fs-5">
+                    Sign Out
+                </button>
+            </form>
+        </div>
+    </div>
+</section>
 {% endblock content %}

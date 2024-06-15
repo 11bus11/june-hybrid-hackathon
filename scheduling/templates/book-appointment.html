@@ -1,11 +1,15 @@
 {% extends "base.html" %}
 {% load crispy_forms_tags %}
 
-{% block content %}
+<!-- Page title -->
+{% block title %}
+Sjukstugan - Book
+{% endblock title %}
 
+{% block content %}
 <!-- book.html content starts here -->
-<section class="main-bg main-text">
-    <div class="container mt-5">
+<section class="container-fluid main-bg main-text">
+    <div class="container-xl main-bg mt-2">
         <h2 class="text-center">Book an Appointment</h2>
         <form method="post">
             {% csrf_token %}
@@ -14,6 +18,7 @@
         </form>
     </div>
 </section>
+
 <!-- book.html content ends here -->
 
 {% endblock %}

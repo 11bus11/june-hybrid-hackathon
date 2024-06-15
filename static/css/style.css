@@ -20,7 +20,7 @@
 
 .main-bg {
     background-color: #f1f4ff;
-    padding: 20px;
+    /* padding: 20px; */
 }
 
 .main-text {
@@ -110,6 +110,13 @@ bg {
     flex-direction: column;
     min-height: 100vh;
     margin: 0;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    margin-top: 66px;
 }
 
 .main-bg {
@@ -221,6 +228,7 @@ button[type="submit"],
     color: #fafafa;
     background-color: #3e913b;
     border: none;
+    border-radius: 2em;
 }
 
 button[type="submit"]:hover,
@@ -243,7 +251,7 @@ form input {
 
 .dividing-line {
     height: 5px;
-    background-color: #3e913b;
+    background-color: #155909;
     width: 100%;
 }
 
@@ -253,6 +261,12 @@ form input {
 
 .helptext {
     display: none;
+}
+
+/* -------------------------------- Links */
+.standard-link {
+    color: #155909;
+    font-weight: 500;
 }
 
 /* Media Queries */
