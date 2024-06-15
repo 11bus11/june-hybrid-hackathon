@@ -28,7 +28,7 @@ Once you have signed in to the page you can see the following:
 
 * Log Out
 
-![header_sign_in]()
+![header_sign_in](documentation/header.signed.in(hackgbg).png)
 
 ### The landing page image: 
 
@@ -148,7 +148,7 @@ The total colours are:
 
 * Black
 
-### Validator testing:
+## Validator testing:
 
 *The HTML and CSS code has been validated through:
 
@@ -156,13 +156,13 @@ The total colours are:
 
 *Jigsaw Validator(CSS): https://www.w3.org/
 
-### Unfixed bugs or features to add in the futes:
+## Unfixed bugs or features to add in the futes:
 
 * A function which cancels the appointment for the user.
 
 * Adding an address to our headquaters.
 
-### Structure
+## Structure
 
 Paths:
 
@@ -184,7 +184,7 @@ Paths:
 
 - __/accounts/logout__ = logout.html (template in .templates/account/)
 
-### Deployment:
+## Deployment:
 
 The program was deployed to [Heroku](https://id.heroku.com/login) and can be accessed by this [link](https://june-hackathon-f262315ded02.herokuapp.com/).
 
