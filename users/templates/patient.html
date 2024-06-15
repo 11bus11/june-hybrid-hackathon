@@ -1,48 +1,57 @@
 {% extends "base.html" %}
 
+<!-- Page title -->
+{% block title %}
+Sjukstugan - My page
+{% endblock title %}
+
 {% block content %}
 
 <!-- profile.html content starts here -->
+<section class="container-fluid main-bg">
+    <div class="container-xl mt-5 main-text">
+        <h1 class="mt-5">
+            {% if user.is_authenticated %}
+            <p>Hello {{ user.first_name }}!</p>
+            {% else %}
+            Not logged in
+            {% endif %}
+        </h1>
 
-<div class="container-xl mt-5 main-text">
-    <h1 class="mt-5">
-        {% if user.is_authenticated %}
-        <p>Hello {{ user.first_name }}!</p>
+        <h2>Appointments:</h2>
+        <div class="dividing-line mb-3"></div>
+        {% if appointments %}
+        <p class="fs-4">You have <span class="fw-bold">{{ appointments.count }}</span> upcoming appointments: </p>
+        <ul>
+            {% for appointment in appointments %}
+            <li>{{ appointment }}</li>
+            {% endfor %}
+        </ul>
+        <p>If you need to make another appointment, please visit the <a class="standard-link"
+                href="{% url 'schedule' %}">booking page.</a>
+        </p>
         {% else %}
-        Not logged in
+        <p>You have no upcoming appointments. If you need to make an appointment, visit the <a
+                href="{% url 'schedule' %}">booking page.</a></p>
         {% endif %}
-    </h1>
 
-    <h2>Appointments:</h2>
-    {% if appointments %}
-    <p>You have {{ appointments.count }} upcoming appointments: </p>
-    <ul>
-        {% for appointment in appointments %}
-        <li>{{ appointment }}</li>
-        {% endfor %}
-    </ul>
-    <p>If you need to make another appointment, please visit the <a href="{% url 'schedule' %}">booking page.</a>
-    </p>
-    {% else %}
-    <p>You have no upcoming appointments. If you need to make an appointment, visit the <a
-            href="{% url 'schedule' %}">booking page.</a></p>
-    {% endif %}
+        <h2>Your details:</h2>
+        <div class="dividing-line mb-3"></div>
+        <p><span class="label">Name: </span>{{ user.first_name }}</p>
+        <p><span class="label">Social security no: </span>{{ user.social_security_no }}</p>
+        <p><span class="label">Address: </span>{{ user.address }}</p>
+        <p><span class="label">Post code / city: </span>{{ user.post_code }} {{ user.city }}</p>
+        <p><span class="label">Email: </span>{{ user.email }}</p>
+        <p><span class="label">Phone: </span>{{ user.phone_no }}</p>
 
-    <h2>Your details:</h2>
-    <p><span class="label">Name: </span>{{ user.first_name }}</p>
-    <p><span class="label">Social security no: </span>{{ user.social_security_no }}</p>
-    <p><span class="label">Address: </span>{{ user.address }}</p>
-    <p><span class="label">Post code / city: </span>{{ user.post_code }} {{ user.city }}</p>
-    <p><span class="label">Email: </span>{{ user.email }}</p>
-    <p><span class="label">Phone: </span>{{ user.phone_no }}</p>
+        {% if user.is_authenticated %}
 
-    {% if user.is_authenticated %}
-
-    {% else %}
-    <p>Not logged in</p>
-    {% endif %}
+        {% else %}
+        <p>Not logged in</p>
+        {% endif %}
+</section>
 
 
-    <!-- profile.html content ends here -->
+<!-- profile.html content ends here -->
 
-    {% endblock %}
+{% endblock %}
